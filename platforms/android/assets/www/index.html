@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Peso Ideal</title>
+	
+	<!-- Ionic Libs -->
+	<link rel="stylesheet" href="lib/ionic/css/ionic.css">
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="js/app.js"></script>
+	<!-- script src="cordova.js"></script -->
+  </head>
+  <body data-ng-controller="AppCtrl" class="platform-android platform-cordova platform-webview">
+	<div class="bar bar-header bar-positive">
+		<h1 class="title">Peso Ideal</h1>
+	</div>
+	<br>
+	<br>
+	<br>
+    <div class="list">
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">Peso</span>
+		<input type="text" placeholder="Peso(kg)" data-ng-model="peso">
+	  </label>
+	  <label class="item item-input item-stacked-label">
+		<span class="input-label">Altura</span>
+		<input type="text" placeholder="Altura(m)" data-ng-model="altura">
+	  </label>
+	  <button class="button button-full button-positive" data-ng-click="calc()">Calcular</button>		
+    </div> 
+	<div data-ng-show="showCard" class="card">
+	  <div class="item item-text-wrap">
+		 IMC:{{imc}} - <b>{{situacao}}</b><br>
+		 Peso Ideal de {{pesoIdealMin}} a {{pesoIdealMax}}
+	  </div>
+	</div>	
+  </body>
+</html>
